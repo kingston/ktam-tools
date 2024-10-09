@@ -34,7 +34,7 @@ export default [
       parserOptions: {
         projectService: {
           // allow default project for root configs
-          allowDefaultProject: ['*.{js,ts}'],
+          allowDefaultProject: ['vitest.config.ts'],
         },
       },
     },
