@@ -1,0 +1,31 @@
+{
+  "name": "@ktam/tools-root",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Monorepo for tooling configs like Prettier and ESLint",
+  "repository": "https://github.com/kingston/node-tools",
+  "license": "MIT",
+  "author": "Kingston Tam",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm -r build",
+    "preinstall": "npx only-allow pnpm",
+    "lint": "pnpm -r lint",
+    "prettier:check": "pnpm -r prettier:check",
+    "test": "pnpm -r test",
+    "versions:check": "check-dependency-version-consistency ."
+  },
+  "devDependencies": {
+    "@changesets/cli": "2.27.9",
+    "@ktam/lint-node": "workspace:*",
+    "check-dependency-version-consistency": "4.1.0"
+  },
+  "packageManager": "pnpm@9.12.1",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  },
+  "volta": {
+    "node": "20.18.0"
+  }
+}
