@@ -1,7 +1,6 @@
 {
   "name": "@ktam/lint-node",
   "version": "0.1.1",
-  "private": true,
   "description": "ESLint and Prettier configs for ESM Node.JS projects",
   "keywords": [
     "eslint",
