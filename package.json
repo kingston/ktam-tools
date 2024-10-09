@@ -12,6 +12,7 @@
     "preinstall": "npx only-allow pnpm",
     "lint": "pnpm -r lint",
     "prettier:check": "pnpm -r prettier:check",
+    "prettier:write": "pnpm -r prettier:write",
     "release": "pnpm build && pnpm changeset publish",
     "test": "pnpm -r test",
     "versions:check": "check-dependency-version-consistency ."
