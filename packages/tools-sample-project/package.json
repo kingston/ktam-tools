@@ -1,6 +1,6 @@
 {
   "name": "@ktam/tools-sample-project",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "A test project to make sure the lint / prettier configs work as expected",
   "repository": "https://github.com/kingston/node-tools/packages/tools-sample-project",
