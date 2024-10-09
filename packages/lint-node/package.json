@@ -7,7 +7,7 @@
     "prettier",
     "node"
   ],
-  "repository": "https://github.com/kingston/node-tools/packages/lint-node",
+  "repository": "https://github.com/kingston/node-tools",
   "license": "MIT",
   "author": "Kingston Tam",
   "sideEffects": false,
