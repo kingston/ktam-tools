@@ -18,7 +18,11 @@
     "./prettier": "./prettier.config.base.js"
   },
   "files": [
-    "prettier.config.base.js"
+    "prettier.config.base.js",
+    "eslint.config.base.d.ts",
+    "eslint.config.base.js",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "lint": "eslint .",
