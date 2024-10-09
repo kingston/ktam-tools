@@ -3,7 +3,10 @@
   "version": "0.1.1",
   "private": true,
   "description": "A test project to make sure the lint / prettier configs work as expected",
-  "repository": "https://github.com/kingston/node-tools",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kingston/ktam-tools"
+  },
   "license": "MIT",
   "author": "Kingston Tam",
   "type": "module",

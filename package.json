@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "description": "Monorepo for tooling configs like Prettier and ESLint",
-  "repository": "https://github.com/kingston/node-tools",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kingston/ktam-tools"
+  },
   "license": "MIT",
   "author": "Kingston Tam",
   "type": "module",
