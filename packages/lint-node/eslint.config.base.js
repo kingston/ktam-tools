@@ -1,9 +1,24 @@
 import eslint from '@eslint/js';
 import vitest from '@vitest/eslint-plugin';
 import eslintConfigPrettier from 'eslint-config-prettier';
+import * as tsResolver from 'eslint-import-resolver-typescript';
+import eslintPluginImportX from 'eslint-plugin-import-x';
 import perfectionist from 'eslint-plugin-perfectionist';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import tseslint from 'typescript-eslint';
+
+export const defaultDevDependencyGlobs = [
+  // allow dev dependencies for test files
+  '**/*.test-helper.{js,ts}',
+  '**/*.test.{js,ts,tsx,jsx}',
+  'src/tests/**/*',
+  // allow dev dependencies for Storybook
+  '**/*.stories.{js,ts,tsx,jsx}',
+  // allow dev dependencies for MDX files
+  '**/*.mdx',
+  // allow dev dependencies for config files at root level
+  '*.{js,ts}',
+];
 
 /** @type { import("eslint").Linter.Config[] } */
 export default [
@@ -44,17 +59,38 @@ export default [
         'error',
         { allowExpressions: true, allowTypedFunctionExpressions: true },
       ],
-      // Enforce the use of destructuring for arrays and objects where applicable
+      // Enforce the use of destructuring for objects where applicable, but not for arrays
       '@typescript-eslint/prefer-destructuring': [
         'error',
         { object: true, array: false },
       ],
+      // Ensure consistent usage of type exports
+      '@typescript-eslint/consistent-type-exports': 'error',
+      // Ensure consistent usage of type imports
+      '@typescript-eslint/consistent-type-imports': 'error',
     },
   },
   {
     // disable type checking for js files
     files: ['**/*.{js,jsx}'],
     ...tseslint.configs.disableTypeChecked,
+  },
+
+  // Import-X Configs
+  eslintPluginImportX.flatConfigs.recommended,
+  eslintPluginImportX.flatConfigs.typescript,
+  {
+    rules: {
+      'import-x/no-named-as-default': 'off',
+      'import-x/no-named-as-default-member': 'off',
+      'import-x/no-extraneous-dependencies': [
+        'error',
+        { devDependencies: defaultDevDependencyGlobs },
+      ],
+    },
+    settings: {
+      'import-x/resolver': { name: 'tsResolver', resolver: tsResolver },
+    },
   },
 
   // Unicorn Configs
