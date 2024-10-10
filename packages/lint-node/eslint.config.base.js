@@ -18,6 +18,7 @@ export const defaultDevDependencyGlobs = [
   '**/*.mdx',
   // allow dev dependencies for config files at root level
   '*.{js,ts}',
+  '.*.{js,ts}',
 ];
 
 /** @type { import("eslint").Linter.Config[] } */
