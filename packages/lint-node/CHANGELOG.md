@@ -1,5 +1,11 @@
 # @ktam/lint-node
 
+## 0.1.3
+
+### Patch Changes
+
+- 1182793: Disable no-null rule on unicorn and improve disable typecheck/dev dependencies
+
 ## 0.1.2
 
 ### Patch Changes
