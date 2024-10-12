@@ -12,6 +12,7 @@ export const defaultDevDependencyGlobs = [
   '**/*.test-helper.{js,ts}',
   '**/*.test.{js,ts,tsx,jsx}',
   'src/tests/**/*',
+  '**/__mocks__/**/*',
   // allow dev dependencies for Storybook
   '**/*.stories.{js,ts,tsx,jsx}',
   // allow dev dependencies for MDX files
@@ -73,7 +74,7 @@ export default [
   },
   {
     // disable type checking for js files
-    files: ['**/*.{js,jsx}'],
+    files: ['**/*.{js,jsx,cjs,mjs}'],
     ...tseslint.configs.disableTypeChecked,
   },
 
@@ -96,7 +97,9 @@ export default [
 
   // Unicorn Configs
   eslintPluginUnicorn.configs['flat/recommended'],
-  { rules: { 'unicorn/prevent-abbreviations': 'off' } },
+  {
+    rules: { 'unicorn/prevent-abbreviations': 'off', 'unicorn/no-null': 'off' },
+  },
 
   // Perfectionist Configs
   {
