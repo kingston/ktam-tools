@@ -1,5 +1,11 @@
 # @ktam/lint-node
 
+## 0.1.4
+
+### Patch Changes
+
+- bb0cdc3: Upgrade dependencies and add more docs to rule overrides
+
 ## 0.1.3
 
 ### Patch Changes
