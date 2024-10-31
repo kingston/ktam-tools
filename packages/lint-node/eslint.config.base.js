@@ -5,7 +5,7 @@ import * as tsResolver from 'eslint-import-resolver-typescript';
 import eslintPluginImportX from 'eslint-plugin-import-x';
 import perfectionist from 'eslint-plugin-perfectionist';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
-import tseslint from 'typescript-eslint';
+import tsEslint from 'typescript-eslint';
 
 export const defaultDevDependencyGlobs = [
   // allow dev dependencies for test files
@@ -23,7 +23,7 @@ export const defaultDevDependencyGlobs = [
 ];
 
 /** @type { import("eslint").Linter.Config[] } */
-export default [
+export default tsEslint.config(
   // ESLint Configs
   eslint.configs.recommended,
   {
@@ -37,16 +37,21 @@ export default [
       // Enforce using concise arrow function syntax when possible.
       'arrow-body-style': ['error', 'as-needed'],
       // Encourage the use of arrow functions for callbacks to avoid `this` binding issues.
-      'prefer-arrow-callback': 'error',
+      // Allow named functions to be used in arrow functions to support generic functions being passed in
+      // e.g. generic components using forwardRef
+      'prefer-arrow-callback': ['error', { allowNamedFunctions: true }],
       // Disallow renaming imports, exports, or destructured variables to the same name.
       'no-useless-rename': 'error',
     },
   },
 
   // Typescript ESLint Configs
-  ...tseslint.configs.strictTypeChecked,
-  ...tseslint.configs.stylisticTypeChecked,
   {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      ...tsEslint.configs.strictTypeChecked,
+      ...tsEslint.configs.stylisticTypeChecked,
+    ],
     languageOptions: {
       parserOptions: {
         projectService: {
@@ -72,19 +77,27 @@ export default [
       '@typescript-eslint/consistent-type-imports': 'error',
     },
   },
-  {
-    // disable type checking for js files
-    files: ['**/*.{js,jsx,cjs,mjs}'],
-    ...tseslint.configs.disableTypeChecked,
-  },
 
   // Import-X Configs
   eslintPluginImportX.flatConfigs.recommended,
-  eslintPluginImportX.flatConfigs.typescript,
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [eslintPluginImportX.flatConfigs.typescript],
+  },
   {
     rules: {
+      // Let Typescript handle it since it slows down linting significantly
+      'import-x/namespace': 'off',
+      'import-x/default': 'off',
+
+      // Allow named default imports without flagging them as errors
       'import-x/no-named-as-default': 'off',
+
+      // Allow named default members without flagging them as errors
       'import-x/no-named-as-default-member': 'off',
+
+      // Disallow importing dependencies that aren’t explicitly listed in the package.json,
+      // except for those explicitly allowed under `devDependencies` (e.g., test files)
       'import-x/no-extraneous-dependencies': [
         'error',
         { devDependencies: defaultDevDependencyGlobs },
@@ -93,12 +106,29 @@ export default [
     settings: {
       'import-x/resolver': { name: 'tsResolver', resolver: tsResolver },
     },
+    languageOptions: {
+      ecmaVersion: 2022,
+      sourceType: 'module',
+      parserOptions: { ecmaVersion: 2022 },
+    },
   },
 
   // Unicorn Configs
   eslintPluginUnicorn.configs['flat/recommended'],
   {
-    rules: { 'unicorn/prevent-abbreviations': 'off', 'unicorn/no-null': 'off' },
+    rules: {
+      // Disable the rule that prevents using abbreviations in identifiers, allowing
+      // flexibility in naming, especially for common abbreviations in code.
+      'unicorn/prevent-abbreviations': 'off',
+
+      // Disable the rule that disallows `null` values, allowing `null` to be used
+      // when necessary (e.g., for nullable types or optional fields).
+      'unicorn/no-null': 'off',
+
+      // Allow array callback references without flags, supporting patterns like
+      // `array.filter(callbackFunction)`, which can improve readability and code brevity.
+      'unicorn/no-array-callback-reference': 'off',
+    },
   },
 
   // Perfectionist Configs
@@ -106,9 +136,20 @@ export default [
     // perfectionist has some nice rules but can be a bit too strict for recommended config
     plugins: { perfectionist },
     rules: {
+      // Enforces a consistent sorting order for import statements. Customizes the sorting
+      // to place internal imports (e.g., `@src/**`) in a specific order for readability and structure.
       'perfectionist/sort-imports': ['error', { internalPattern: ['@src/**'] }],
+
+      // Enforces consistent sorting for export statements, keeping exports organized
+      // and making them easier to locate within modules.
       'perfectionist/sort-exports': ['error'],
+
+      // Ensures named imports are sorted alphabetically or in a specified order,
+      // promoting a clean and structured appearance for import declarations.
       'perfectionist/sort-named-imports': ['error'],
+
+      // Enforces alphabetical or specified sorting for named exports to maintain
+      // consistency, aiding readability and organization within files.
       'perfectionist/sort-named-exports': ['error'],
     },
   },
@@ -125,4 +166,4 @@ export default [
 
   // Global Ignores
   { ignores: ['dist', 'node_modules'] },
-];
+);
