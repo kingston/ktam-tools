@@ -1,5 +1,11 @@
 # @ktam/lint-react
 
+## 0.1.2
+
+### Patch Changes
+
+- a065e56: Add react default config and fix Astro astro: imports
+
 ## 0.1.1
 
 ### Patch Changes
