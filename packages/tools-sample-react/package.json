@@ -1,0 +1,30 @@
+{
+  "name": "@ktam/tools-sample-react",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -b && vite build",
+    "dev": "vite",
+    "preinstall": "npx only-allow pnpm",
+    "lint": "eslint .",
+    "prettier:check": "prettier --check .",
+    "prettier:write": "prettier -w .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@ktam/lint-react": "workspace:*",
+    "@types/node": "20",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "eslint": "9.13.0",
+    "prettier": "3.3.3",
+    "typescript": "5.5.4",
+    "vite": "^5.4.10"
+  }
+}

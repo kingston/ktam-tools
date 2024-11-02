@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/base-layout.astro';
+
+const skills = ['Astro', 'React', 'TypeScript', 'Tailwind CSS'];
+---
+
+<BaseLayout title="About">
+  <h1 class="mb-4 text-4xl font-bold">About Page</h1>
+  <div class="rounded-lg bg-white p-6 shadow-md">
+    <h2 class="mb-4 text-2xl">Skills</h2>
+    <ul class="list-disc pl-6">
+      {skills.map((skill) => <li class="mb-2">{skill}</li>)}
+    </ul>
+  </div>
+</BaseLayout>

@@ -16,13 +16,15 @@
   "sideEffects": false,
   "type": "module",
   "exports": {
-    "./eslint": "./eslint.config.base.js",
-    "./prettier": "./prettier.config.base.js"
+    "./eslint-configs/typescript": "./eslint-configs/typescript.js",
+    "./eslint-configs/prettier": "./eslint-configs/prettier.js",
+    "./eslint": "./eslint.config.node.js",
+    "./prettier": "./prettier.config.node.js"
   },
   "files": [
-    "prettier.config.base.js",
-    "eslint.config.base.d.ts",
-    "eslint.config.base.js",
+    "eslint-configs/*.js",
+    "prettier.config.node.js",
+    "eslint.config.node.js",
     "README.md",
     "LICENSE"
   ],
@@ -39,18 +41,21 @@
     "eslint-plugin-import-x": "4.4.0",
     "eslint-plugin-perfectionist": "3.9.1",
     "eslint-plugin-unicorn": "56.0.0",
-    "prettier": "3.3.3",
     "prettier-plugin-packagejson": "2.5.3",
     "typescript-eslint": "8.12.2"
   },
   "devDependencies": {
     "@tsconfig/node20": "20.1.4",
-    "eslint": "9.13.0",
-    "typescript": "5.5.4"
+    "@types/eslint-config-prettier": "6.11.3",
+    "@types/eslint__js": "8.42.3",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "typescript": "catalog:"
   },
   "peerDependencies": {
-    "eslint": "^9.12.0",
-    "typescript": "^5.5"
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "typescript": "catalog:"
   },
   "engines": {
     "node": ">=20",

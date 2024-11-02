@@ -1,0 +1,50 @@
+// @ts-check
+
+/**
+ * @typedef {import('@typescript-eslint/utils/ts-eslint').FlatConfig.ConfigArray} ConfigArray
+ * @typedef {import('@ktam/lint-node/eslint-configs/typescript').GenerateTypescriptEslintConfigOptions} GenerateTypescriptEslintConfigOptions
+ */
+
+import eslintPluginAstro from 'eslint-plugin-astro';
+import tsEslint from 'typescript-eslint';
+
+/** @type {GenerateTypescriptEslintConfigOptions} */
+export const astroTypescriptEslintOptions = {
+  extraTsFileGlobs: ['**/*.astro'],
+  extraDefaultProjectFiles: ['astro.config.ts'],
+};
+
+/** @type {ConfigArray} */
+export const astroEslintConfig = tsEslint.config(
+  // Astro
+  ...eslintPluginAstro.configs['flat/recommended'],
+  ...eslintPluginAstro.configs['flat/jsx-a11y-recommended'],
+
+  {
+    files: ['**/*.astro'],
+    languageOptions: {
+      parserOptions: {
+        projectService: false,
+        project: true,
+      },
+    },
+  },
+  {
+    files: ['**/*.astro/*.ts', '*.astro/*.ts'],
+    extends: [tsEslint.configs.disableTypeChecked],
+  },
+
+  {
+    rules: {
+      // It incorrectly flags <meta charset="UTF-8" /> as an error for Astro
+      'unicorn/text-encoding-identifier-case': 'off',
+    },
+  },
+
+  // Ignores
+  {
+    ignores: ['.astro', '.wrangler', 'src/env.d.ts'],
+  },
+);
+
+export default astroEslintConfig;

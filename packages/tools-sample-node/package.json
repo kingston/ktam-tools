@@ -1,8 +1,8 @@
 {
-  "name": "@ktam/tools-sample-project",
+  "name": "@ktam/tools-sample-node",
   "version": "0.1.1",
   "private": true,
-  "description": "A test project to make sure the lint / prettier configs work as expected",
+  "description": "A test Node project to make sure the lint / prettier configs work as expected",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kingston/ktam-tools"
@@ -23,8 +23,9 @@
     "@ktam/lint-node": "workspace:*",
     "@tsconfig/node20": "20.1.4",
     "@types/node": "20",
-    "eslint": "9.13.0",
-    "typescript": "5.5.4",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "typescript": "catalog:",
     "vite-tsconfig-paths": "5.0.1",
     "vitest": "2.1.4"
   },

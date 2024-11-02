@@ -1,0 +1,31 @@
+<div class="rounded-lg bg-gray-100 p-4 text-center">
+  <h2 class="mb-4 text-2xl">Counter Component</h2>
+  <p class="mb-4 text-4xl" id="count">0</p>
+  <div class="space-x-2">
+    <button id="increment" class="rounded bg-blue-500 px-4 py-2 text-white"
+      >Increment</button
+    >
+    <button id="decrement" class="rounded bg-red-500 px-4 py-2 text-white"
+      >Decrement</button
+    >
+  </div>
+</div>
+
+<script>
+  let count = 0;
+  const countDisplay = document.querySelector('#count');
+  const incrementBtn = document.querySelector('#increment');
+  const decrementBtn = document.querySelector('#decrement');
+
+  if (countDisplay && incrementBtn && decrementBtn) {
+    incrementBtn.addEventListener('click', () => {
+      count++;
+      countDisplay.textContent = count.toString();
+    });
+
+    decrementBtn.addEventListener('click', () => {
+      count--;
+      countDisplay.textContent = count.toString();
+    });
+  }
+</script>
