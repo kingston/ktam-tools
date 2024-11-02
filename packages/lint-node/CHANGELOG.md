@@ -1,5 +1,11 @@
 # @ktam/lint-node
 
+## 0.2.0
+
+### Minor Changes
+
+- 60368ed: Updated to use composeable generators instead of one generator
+
 ## 0.1.4
 
 ### Patch Changes
