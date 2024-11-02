@@ -1,0 +1,80 @@
+{
+  "name": "@ktam/lint-react",
+  "version": "0.1.0",
+  "description": "ESLint and Prettier configs for React projects",
+  "keywords": [
+    "eslint",
+    "prettier",
+    "react"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kingston/ktam-tools"
+  },
+  "license": "MIT",
+  "author": "Kingston Tam",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    "./eslint": "./eslint.config.react.js",
+    "./eslint-astro": "./eslint.config.astro.js",
+    "./eslint-configs/astro": "./eslint-configs/astro.js",
+    "./eslint-configs/react": "./eslint-configs/react.js",
+    "./eslint-configs/storybook": "./eslint-configs/storybook.js",
+    "./eslint-configs/tailwind": "./eslint-configs/tailwind.js",
+    "./prettier": "./prettier.config.react.js",
+    "./prettier-astro": "./prettier.config.astro.js"
+  },
+  "files": [
+    "eslint-configs",
+    "eslint.config.astro.js",
+    "eslint.config.react.js",
+    "prettier.config.react.js",
+    "prettier.config.astro.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "prettier:check": "prettier --check .",
+    "prettier:write": "prettier -w ."
+  },
+  "dependencies": {
+    "@ktam/lint-node": "workspace:*",
+    "@typescript-eslint/parser": "8.12.2",
+    "eslint-plugin-astro": "1.3.0",
+    "eslint-plugin-import-x": "4.4.0",
+    "eslint-plugin-jsx-a11y": "6.10.2",
+    "eslint-plugin-react": "7.37.2",
+    "eslint-plugin-react-hooks": "5.0.0",
+    "eslint-plugin-storybook": "0.10.1",
+    "eslint-plugin-tailwindcss": "3.17.5",
+    "prettier-plugin-astro": "0.14.1",
+    "prettier-plugin-tailwindcss": "0.6.8",
+    "typescript-eslint": "8.12.2"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "20.1.4",
+    "@types/eslint-plugin-jsx-a11y": "6.9.0",
+    "@types/eslint-plugin-tailwindcss": "3.17.0",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "typescript": "catalog:"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  },
+  "volta": {
+    "node": "20.18.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

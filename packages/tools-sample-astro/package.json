@@ -1,0 +1,42 @@
+{
+  "name": "@ktam/tools-sample-astro",
+  "version": "0.0.1",
+  "private": true,
+  "description": "A test Astro project to make sure the lint / prettier configs work as expected",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kingston/ktam-tools"
+  },
+  "type": "module",
+  "scripts": {
+    "astro": "astro",
+    "build": "astro check && astro build",
+    "dev": "astro dev",
+    "preinstall": "npx only-allow pnpm",
+    "lint": "eslint .",
+    "prettier:check": "prettier --check .",
+    "prettier:write": "prettier -w .",
+    "preview": "astro preview",
+    "start": "astro dev"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/tailwind": "^5.1.2",
+    "astro": "^4.16.8",
+    "tailwindcss": "^3.4.14"
+  },
+  "devDependencies": {
+    "@ktam/lint-react": "workspace:*",
+    "@types/node": "20",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "typescript": "catalog:"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  },
+  "volta": {
+    "node": "20.18.0"
+  }
+}

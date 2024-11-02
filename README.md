@@ -43,15 +43,14 @@ export { default } from '@ktam/lint-node/prettier';
 
 ## 2. `@ktam/lint-react`
 
-**This is a Work in Progress - does not currently exist**
-
-This package provides ESLint and Prettier configurations specifically for React applications, extending the base Node.js configuration with React-specific rules and practices.
+This package provides ESLint and Prettier configurations specifically for React and Astro applications, extending the base Node.js configuration with React-specific rules and practices.
 
 ### Features:
 
 - ESLint rules for React, JSX, and modern JavaScript/TypeScript.
 - Integration with popular React linting plugins.
 - Prettier setup that works with React and JSX.
+- Astro support.
 
 ### Installation:
 

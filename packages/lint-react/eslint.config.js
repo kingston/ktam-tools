@@ -1,7 +1,7 @@
-import nodeConfig from './eslint.config.node.js';
+import eslintBase from '@ktam/lint-node/eslint';
 
 export default [
-  ...nodeConfig,
+  ...eslintBase,
   {
     rules: {
       // by default, we allow dev dependencies in all root configs
