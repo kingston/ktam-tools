@@ -38,6 +38,8 @@ export const astroEslintConfig = tsEslint.config(
     rules: {
       // It incorrectly flags <meta charset="UTF-8" /> as an error for Astro
       'unicorn/text-encoding-identifier-case': 'off',
+      // Ignore astro: modules for no-unresolved (https://github.com/ota-meshi/eslint-plugin-astro/issues/300)
+      'import-x/no-unresolved': ['error', { ignore: ['^astro:.*$'] }],
     },
   },
 

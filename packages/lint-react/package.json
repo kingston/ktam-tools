@@ -18,6 +18,7 @@
   "exports": {
     "./eslint": "./eslint.config.react.js",
     "./eslint-astro": "./eslint.config.astro.js",
+    "./eslint-react": "./eslint.config.react.js",
     "./eslint-configs/astro": "./eslint-configs/astro.js",
     "./eslint-configs/react": "./eslint-configs/react.js",
     "./eslint-configs/storybook": "./eslint-configs/storybook.js",
