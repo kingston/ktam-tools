@@ -21,11 +21,11 @@
     "versions:check": "check-dependency-version-consistency ."
   },
   "devDependencies": {
-    "@changesets/cli": "2.27.9",
+    "@changesets/cli": "2.27.11",
     "@ktam/lint-node": "workspace:*",
-    "check-dependency-version-consistency": "4.1.0"
+    "check-dependency-version-consistency": "5.0.0"
   },
-  "packageManager": "pnpm@9.12.1",
+  "packageManager": "pnpm@9.15.0",
   "engines": {
     "node": ">=20",
     "pnpm": ">=9"

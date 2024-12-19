@@ -22,12 +22,12 @@
   "devDependencies": {
     "@ktam/lint-node": "workspace:*",
     "@tsconfig/node20": "20.1.4",
-    "@types/node": "20",
+    "@types/node": "20.17.10",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:",
-    "vite-tsconfig-paths": "5.0.1",
-    "vitest": "2.1.4"
+    "vite-tsconfig-paths": "5.1.4",
+    "vitest": "2.1.8"
   },
   "engines": {
     "node": ">=20",
