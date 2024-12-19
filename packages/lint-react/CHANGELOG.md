@@ -1,5 +1,20 @@
 # @ktam/lint-react
 
+## 0.2.0
+
+### Minor Changes
+
+- baebef3: Upgrade ESLint to 9.17 and Prettier to 3.4
+- baebef3: Upgrade Astro to 5.1
+- baebef3: Upgrade Vite to 6.0.4
+
+### Patch Changes
+
+- baebef3: Upgrade various linter/prettier plugins
+- Updated dependencies [baebef3]
+- Updated dependencies [baebef3]
+  - @ktam/lint-node@0.3.0
+
 ## 0.1.2
 
 ### Patch Changes
