@@ -1,5 +1,11 @@
 # @ktam/tools-sample-astro
 
+## 0.1.1
+
+### Patch Changes
+
+- 953a83d: Improve inline script handling and add .vercel to eslint ignore
+
 ## 0.1.0
 
 ### Minor Changes
