@@ -1,5 +1,11 @@
 # @ktam/lint-react
 
+## 0.2.1
+
+### Patch Changes
+
+- 953a83d: Improve inline script handling and add .vercel to eslint ignore
+
 ## 0.2.0
 
 ### Minor Changes
