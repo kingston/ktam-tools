@@ -1,11 +1,15 @@
-<div class="rounded-lg bg-gray-100 p-4 text-center">
-  <h2 class="mb-4 text-2xl">Counter Component</h2>
-  <p class="mb-4 text-4xl" id="count">0</p>
+<div class="rounded-lg bg-gray-100 p-4 text-center dark:bg-gray-800">
+  <h2 class="mb-4 text-2xl text-gray-900 dark:text-white">Counter Component</h2>
+  <p class="mb-4 text-4xl text-gray-900 dark:text-white" id="count">0</p>
   <div class="space-x-2">
-    <button id="increment" class="rounded bg-blue-500 px-4 py-2 text-white"
+    <button
+      id="increment"
+      class="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
       >Increment</button
     >
-    <button id="decrement" class="rounded bg-red-500 px-4 py-2 text-white"
+    <button
+      id="decrement"
+      class="rounded bg-red-500 px-4 py-2 text-white hover:bg-red-600"
       >Decrement</button
     >
   </div>
@@ -18,14 +22,17 @@
   const decrementBtn = document.querySelector('#decrement');
 
   if (countDisplay && incrementBtn && decrementBtn) {
-    incrementBtn.addEventListener('click', () => {
-      count++;
+    const handleIncrement = (diff: number): void => {
+      count += diff;
       countDisplay.textContent = count.toString();
+    };
+
+    incrementBtn.addEventListener('click', () => {
+      handleIncrement(1);
     });
 
     decrementBtn.addEventListener('click', () => {
-      count--;
-      countDisplay.textContent = count.toString();
+      handleIncrement(-1);
     });
   }
 </script>

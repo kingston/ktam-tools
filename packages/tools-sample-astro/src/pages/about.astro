@@ -4,10 +4,12 @@ import BaseLayout from '../layouts/base-layout.astro';
 ---
 
 <BaseLayout title="About">
-  <h1 class="mb-4 text-4xl font-bold">About Page</h1>
-  <div class="rounded-lg bg-white p-6 shadow-md">
-    <h2 class="mb-4 text-2xl">Skills</h2>
-    <ul class="list-disc pl-6">
+  <h1 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
+    About Page
+  </h1>
+  <div class="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800">
+    <h2 class="mb-4 text-2xl text-gray-900 dark:text-white">Skills</h2>
+    <ul class="list-disc pl-6 text-gray-700 dark:text-gray-300">
       {SKILLS.map((skill) => <li class="mb-2">{skill}</li>)}
     </ul>
   </div>

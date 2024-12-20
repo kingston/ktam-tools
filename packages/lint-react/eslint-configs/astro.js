@@ -30,8 +30,16 @@ export const astroEslintConfig = tsEslint.config(
     },
   },
   {
-    files: ['**/*.astro/*.ts', '*.astro/*.ts'],
+    files: [
+      '**/*.astro/*.ts',
+      '*.astro/*.ts',
+      '**/*.astro/*.js',
+      '*.astro/*.js',
+    ],
     extends: [tsEslint.configs.disableTypeChecked],
+    rules: {
+      '@typescript-eslint/explicit-function-return-type': 'off',
+    },
   },
 
   {
@@ -45,7 +53,7 @@ export const astroEslintConfig = tsEslint.config(
 
   // Ignores
   {
-    ignores: ['.astro', '.wrangler', 'src/env.d.ts'],
+    ignores: ['.astro', '.wrangler', 'src/env.d.ts', '.vercel'],
   },
 );
 
