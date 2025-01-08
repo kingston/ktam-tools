@@ -2,6 +2,7 @@
 
 import { prettierEslintConfig } from '@ktam/lint-node/eslint-configs/prettier';
 import { generateTypescriptEslintConfig } from '@ktam/lint-node/eslint-configs/typescript';
+import globals from 'globals';
 
 import {
   reactEslintConfig,
@@ -22,6 +23,7 @@ export default [
     tailwindTypescriptEslintOptions,
     storybookTypescriptEslintOptions,
   ]),
+  { languageOptions: { globals: globals.browser } },
   ...reactEslintConfig,
   ...tailwindEslintConfig,
   ...storybookEslintConfig,
