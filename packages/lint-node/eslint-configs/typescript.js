@@ -36,8 +36,8 @@ export function generateTypescriptEslintConfig(options = []) {
     'src/tests/**/*',
     '**/__mocks__/**/*',
     // allow dev dependencies for config files at root level
-    '*.{js,ts}',
-    '.*.{js,ts}',
+    '*.{js,ts,mjs,mts,cjs,cts}',
+    '.*.{js,ts,mjs,mts,cjs,cts}',
     ...options.flatMap((option) => option.extraDevDependencies ?? []),
   ];
   const defaultProjectFiles = [
