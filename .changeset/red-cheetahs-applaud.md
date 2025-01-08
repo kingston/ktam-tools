@@ -2,4 +2,4 @@
 '@ktam/lint-node': patch
 ---
 
-Add Node.JS globals when parsing without Typescript
+Add Node.js globals when parsing without TypeScript
