@@ -1,5 +1,12 @@
 # @ktam/lint-react
 
+## 0.2.3
+
+### Patch Changes
+
+- Updated dependencies [d6670c1]
+  - @ktam/lint-node@0.3.2
+
 ## 0.2.2
 
 ### Patch Changes
