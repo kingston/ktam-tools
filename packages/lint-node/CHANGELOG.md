@@ -1,5 +1,11 @@
 # @ktam/lint-node
 
+## 0.3.1
+
+### Patch Changes
+
+- 14c500d: Add Node.js globals when parsing without TypeScript
+
 ## 0.3.0
 
 ### Minor Changes
