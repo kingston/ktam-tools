@@ -1,5 +1,11 @@
 # @ktam/lint-node
 
+## 0.3.2
+
+### Patch Changes
+
+- d6670c1: Add root-level mjs/mts/cjs/cts files to dev dependencies
+
 ## 0.3.1
 
 ### Patch Changes
