@@ -1,5 +1,13 @@
 # @ktam/lint-react
 
+## 0.2.2
+
+### Patch Changes
+
+- 14c500d: Add browser globals when parsing without TypeScript
+- Updated dependencies [14c500d]
+  - @ktam/lint-node@0.3.1
+
 ## 0.2.1
 
 ### Patch Changes
