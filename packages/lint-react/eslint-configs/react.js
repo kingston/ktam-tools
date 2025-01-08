@@ -12,6 +12,7 @@ import reactPlugin from 'eslint-plugin-react';
 // @ts-ignore eslint-plugin-react-hooks does not have typings
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import tailwindPlugin from 'eslint-plugin-tailwindcss';
+import globals from 'globals';
 import tsEslint from 'typescript-eslint';
 
 /** @type {GenerateTypescriptEslintConfigOptions} */
@@ -27,6 +28,7 @@ export const reactEslintConfig = tsEslint.config(
       /** @type { Config } */ (reactPlugin.configs.flat?.['jsx-runtime']),
       reactJsxA11yPlugin.flatConfigs.recommended,
     ],
+    languageOptions: { globals: globals.browser },
     settings: {
       react: {
         version: 'detect',

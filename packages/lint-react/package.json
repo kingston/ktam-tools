@@ -50,6 +50,7 @@
     "eslint-plugin-react-hooks": "5.1.0",
     "eslint-plugin-storybook": "0.11.1",
     "eslint-plugin-tailwindcss": "3.17.5",
+    "globals": "^15.14.0",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.6.9",
     "typescript-eslint": "8.18.1"
