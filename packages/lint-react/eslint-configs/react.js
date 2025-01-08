@@ -28,8 +28,8 @@ export const reactEslintConfig = tsEslint.config(
       /** @type { Config } */ (reactPlugin.configs.flat?.['jsx-runtime']),
       reactJsxA11yPlugin.flatConfigs.recommended,
     ],
+    languageOptions: { globals: globals.browser },
     settings: {
-      languageOptions: { globals: globals.browser },
       react: {
         version: 'detect',
       },
