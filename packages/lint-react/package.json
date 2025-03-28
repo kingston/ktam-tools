@@ -1,6 +1,6 @@
 {
   "name": "@ktam/lint-react",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "ESLint and Prettier configs for React projects",
   "keywords": [
     "eslint",

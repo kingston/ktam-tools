@@ -1,5 +1,18 @@
 # @ktam/lint-react
 
+## 0.3.0
+
+### Minor Changes
+
+- a1cfb96: Upgrade ESLint (9.17 -> 9.22) and ESLint plugin and Prettier (3.4 -> 3.5)
+- a1cfb96: Upgrade Typescript to 5.7
+
+### Patch Changes
+
+- Updated dependencies [a1cfb96]
+- Updated dependencies [a1cfb96]
+  - @ktam/lint-node@0.4.0
+
 ## 0.2.3
 
 ### Patch Changes
