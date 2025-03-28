@@ -1,4 +1,6 @@
+// @ts-check
 import basePrettierConfig from '@ktam/lint-node/prettier';
+import url from 'node:url';
 
 /** @type {import("prettier").Config} */
 export default {
@@ -6,6 +8,7 @@ export default {
   tailwindFunctions: ['clsx', 'cn', 'cva'],
   plugins: [
     ...(basePrettierConfig.plugins ?? []),
-    'prettier-plugin-tailwindcss',
+    // workaround for this bug: https://github.com/prettier/prettier-vscode/issues/3641
+    url.fileURLToPath(import.meta.resolve('prettier-plugin-tailwindcss')),
   ],
 };
