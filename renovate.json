@@ -3,5 +3,6 @@
   "extends": [
     "security:only-security-updates"
   ],
+  "rangeStrategy": "replace",
   "postUpdateOptions": ["pnpmDedupe"]
 }
