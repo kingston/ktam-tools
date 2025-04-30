@@ -11,9 +11,7 @@ import {
   storybookEslintConfig,
   storybookTypescriptEslintOptions,
 } from './eslint-configs/storybook.js';
-import tailwindEslintConfig, {
-  tailwindTypescriptEslintOptions,
-} from './eslint-configs/tailwind.js';
+import { tailwindTypescriptEslintOptions } from './eslint-configs/tailwind.js';
 
 /** @type {import('@typescript-eslint/utils/ts-eslint').FlatConfig.ConfigArray} */
 export default [
@@ -23,7 +21,6 @@ export default [
     storybookTypescriptEslintOptions,
   ]),
   ...reactEslintConfig,
-  ...tailwindEslintConfig,
   ...storybookEslintConfig,
   prettierEslintConfig,
 ];

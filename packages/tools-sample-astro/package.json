@@ -17,20 +17,21 @@
     "prettier:check": "prettier --check .",
     "prettier:write": "prettier -w .",
     "preview": "astro preview",
-    "start": "astro dev"
+    "start": "astro dev",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/tailwind": "^5.1.5",
-    "astro": "^5.5.5",
-    "tailwindcss": "^3.4.17"
+    "@tailwindcss/vite": "4.1.4",
+    "astro": "^5.7.10",
+    "tailwindcss": "^4.1.4"
   },
   "devDependencies": {
     "@ktam/lint-react": "workspace:*",
-    "@types/node": "20.17.10",
+    "@types/node": "22.15.3",
     "eslint": "catalog:",
     "prettier": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "5.7.3"
   },
   "engines": {
     "node": ">=20",

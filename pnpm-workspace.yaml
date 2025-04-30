@@ -6,3 +6,4 @@ catalog:
   prettier: ^3.5
 onlyBuiltDependencies:
   - esbuild
+  - sharp

@@ -6,9 +6,7 @@ import { generateTypescriptEslintConfig } from '@ktam/lint-node/eslint-configs/t
 import astroEslintConfig, {
   astroTypescriptEslintOptions,
 } from './eslint-configs/astro.js';
-import tailwindEslintConfig, {
-  tailwindTypescriptEslintOptions,
-} from './eslint-configs/tailwind.js';
+import { tailwindTypescriptEslintOptions } from './eslint-configs/tailwind.js';
 
 /** @type {import('@typescript-eslint/utils/ts-eslint').FlatConfig.ConfigArray} */
 export default [
@@ -17,6 +15,5 @@ export default [
     tailwindTypescriptEslintOptions,
   ]),
   ...astroEslintConfig,
-  ...tailwindEslintConfig,
   prettierEslintConfig,
 ];

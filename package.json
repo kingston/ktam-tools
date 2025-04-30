@@ -18,10 +18,11 @@
     "prettier:write": "pnpm -r prettier:write",
     "release": "pnpm build && pnpm changeset publish",
     "test": "pnpm -r test",
+    "typecheck": "pnpm -r typecheck",
     "versions:check": "check-dependency-version-consistency ."
   },
   "devDependencies": {
-    "@changesets/cli": "2.28.1",
+    "@changesets/cli": "2.29.2",
     "@ktam/lint-node": "workspace:*",
     "check-dependency-version-consistency": "5.0.0"
   },

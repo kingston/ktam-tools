@@ -27,6 +27,8 @@ jobs:
         run: pnpm lint
       - name: Check Code Formatting
         run: pnpm prettier:check
+      - name: Typecheck Project
+        run: pnpm typecheck
 
       # If you have a monorepo, you can add the following steps to the job:
 

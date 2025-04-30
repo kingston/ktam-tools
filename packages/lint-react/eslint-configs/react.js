@@ -11,12 +11,13 @@ import reactJsxA11yPlugin from 'eslint-plugin-jsx-a11y';
 import reactPlugin from 'eslint-plugin-react';
 // @ts-ignore eslint-plugin-react-hooks does not have typings
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
-import tailwindPlugin from 'eslint-plugin-tailwindcss';
 import globals from 'globals';
 import tsEslint from 'typescript-eslint';
 
 /** @type {GenerateTypescriptEslintConfigOptions} */
-export const reactTypescriptEslintOptions = {};
+export const reactTypescriptEslintOptions = {
+  extraDefaultProjectFiles: [],
+};
 
 /** @type {ConfigArray} */
 export const reactEslintConfig = tsEslint.config(
@@ -44,15 +45,6 @@ export const reactEslintConfig = tsEslint.config(
       'react-hooks': /** @type { any } */ (reactHooksPlugin),
     },
     rules: /** @type { any } */ (reactHooksPlugin.configs.recommended).rules,
-  },
-
-  // Tailwind
-  {
-    extends: tailwindPlugin.configs['flat/recommended'],
-    rules: {
-      'tailwindcss/no-custom-classname': ['error', {}],
-      'tailwindcss/classnames-order': 'off',
-    },
   },
 
   // Import-X
