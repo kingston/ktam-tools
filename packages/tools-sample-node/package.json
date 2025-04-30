@@ -17,17 +17,18 @@
     "prettier:check": "prettier --check .",
     "prettier:write": "prettier -w .",
     "start": "node dist/index.js",
-    "test": "vitest"
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@ktam/lint-node": "workspace:*",
     "@tsconfig/node20": "20.1.5",
-    "@types/node": "20.17.10",
+    "@types/node": "22.15.3",
     "eslint": "catalog:",
     "prettier": "catalog:",
-    "typescript": "catalog:",
+    "typescript": "5.7.3",
     "vite-tsconfig-paths": "5.1.4",
-    "vitest": "3.0.9"
+    "vitest": "3.1.2"
   },
   "engines": {
     "node": ">=20",
