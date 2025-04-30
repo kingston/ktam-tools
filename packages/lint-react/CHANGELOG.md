@@ -1,5 +1,13 @@
 # @ktam/lint-react
 
+## 0.4.0
+
+### Minor Changes
+
+- 2f2db56: Upgrade React to v19 and Tailwind to v4
+
+  As ESLint Tailwind does not support v4 yet, we removed the Tailwind config from the linting configs.
+
 ## 0.3.0
 
 ### Minor Changes
