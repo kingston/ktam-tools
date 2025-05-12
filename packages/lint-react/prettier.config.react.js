@@ -6,6 +6,8 @@ import url from 'node:url';
 export default {
   ...basePrettierConfig,
   tailwindFunctions: ['clsx', 'cn', 'cva'],
+  // For Tailwind CSS v4, specify the CSS file that contains your theme and configuration
+  tailwindStylesheet: './src/styles.css',
   plugins: [
     ...(basePrettierConfig.plugins ?? []),
     // workaround for this bug: https://github.com/prettier/prettier-vscode/issues/3641

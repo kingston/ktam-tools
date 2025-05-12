@@ -2,6 +2,32 @@
 
 This repository contains shared configurations for ESLint and Prettier to make it easier to share configs between projects targetted at modern ESM Node.JS/React apps.
 
+## PNPM v10 Requirements
+
+When using pnpm v10 with Astro, the following lines need to be added to your `.npmrc` file:
+
+```
+# Hoist typescript eslint and jsx to support eslint astro
+# https://github.com/ota-meshi/eslint-plugin-astro/issues/470
+public-hoist-pattern[]=@typescript-eslint/parser
+public-hoist-pattern[]=eslint-plugin-jsx-a11y
+```
+
+## Tailwind CSS v4 Configuration
+
+When using Tailwind CSS v4 with Prettier, you must specify your CSS file entry point in the Prettier configuration. The default configuration in this package points to `./src/styles.css`, but you can override it in your project's Prettier configuration:
+
+```js
+// prettier.config.js
+import reactPrettierConfig from '@ktam/lint-react/prettier';
+
+export default {
+  ...reactPrettierConfig,
+  // Override with your project's Tailwind CSS entry point if needed
+  tailwindStylesheet: './your-project-path/app.css',
+};
+```
+
 The repository is structured into two packages, each serving a different project type:
 
 ## 1. `@ktam/lint-node`
