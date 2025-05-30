@@ -4,6 +4,5 @@ catalog:
   typescript: ^5.7
   eslint: ^9.22
   prettier: ^3.5
-onlyBuiltDependencies:
-  - esbuild
-  - sharp
+ignoredBuiltDependencies:
+  - unrs-resolver

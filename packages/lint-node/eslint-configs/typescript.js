@@ -6,8 +6,7 @@
 
 import eslint from '@eslint/js';
 import vitest from '@vitest/eslint-plugin';
-import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
-import eslintPluginImportX from 'eslint-plugin-import-x';
+import { importX } from 'eslint-plugin-import-x';
 import perfectionist from 'eslint-plugin-perfectionist';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import tsEslint from 'typescript-eslint';
@@ -101,11 +100,8 @@ export function generateTypescriptEslintConfig(options = []) {
     },
 
     // Import-X Configs
-    eslintPluginImportX.flatConfigs.recommended,
-    {
-      files: tsFileGlobs,
-      extends: [eslintPluginImportX.flatConfigs.typescript],
-    },
+    importX.flatConfigs.recommended,
+    importX.flatConfigs.typescript,
     {
       rules: {
         // Let Typescript handle it since it slows down linting significantly
@@ -121,9 +117,6 @@ export function generateTypescriptEslintConfig(options = []) {
         // Disallow importing dependencies that aren't explicitly listed in the package.json,
         // except for those explicitly allowed under `devDependencies` (e.g., test files)
         'import-x/no-extraneous-dependencies': ['error', { devDependencies }],
-      },
-      settings: {
-        'import-x/resolver-next': [createTypeScriptImportResolver()],
       },
       languageOptions: {
         ecmaVersion: 2022,
@@ -170,7 +163,7 @@ export function generateTypescriptEslintConfig(options = []) {
               'side-effect',
               'unknown',
             ],
-            internalPattern: ['^@src/'],
+            internalPattern: ['^@src/', '^#src/'],
           },
         ],
         'perfectionist/sort-exports': ['error'],
