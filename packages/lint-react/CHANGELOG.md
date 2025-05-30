@@ -1,5 +1,19 @@
 # @ktam/lint-react
 
+## 0.4.1
+
+### Patch Changes
+
+- 7cebd48: Upgrade eslint-plugin-import-x to 4.14.1 and @vitest/eslint-plugin to 1.2.1
+- 96e2f21: feat: Add support for Tailwind CSS v4 and update PNPM v10 compatibility
+
+  - Add Tailwind CSS v4 stylesheet configuration in prettier.config.react.js
+  - Add documentation for PNPM v10 compatibility with Astro projects
+  - Document Tailwind CSS v4 configuration requirements in README
+
+- Updated dependencies [7cebd48]
+  - @ktam/lint-node@0.4.1
+
 ## 0.4.0
 
 ### Minor Changes

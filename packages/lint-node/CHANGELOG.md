@@ -1,5 +1,11 @@
 # @ktam/lint-node
 
+## 0.4.1
+
+### Patch Changes
+
+- 7cebd48: Upgrade eslint-plugin-import-x to 4.14.1 and @vitest/eslint-plugin to 1.2.1
+
 ## 0.4.0
 
 ### Minor Changes
