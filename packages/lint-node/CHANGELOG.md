@@ -1,5 +1,11 @@
 # @ktam/lint-node
 
+## 0.4.2
+
+### Patch Changes
+
+- 88c0bb3: Relax rules for typescript-eslint template expressions, various unicorn rules, and disable no-unresolved since Tyepscript handles that
+
 ## 0.4.1
 
 ### Patch Changes
