@@ -96,6 +96,24 @@ export function generateTypescriptEslintConfig(options = []) {
         '@typescript-eslint/consistent-type-exports': 'error',
         // Ensure consistent usage of type imports
         '@typescript-eslint/consistent-type-imports': 'error',
+        // Allow more relaxed template expression checks
+        '@typescript-eslint/restrict-template-expressions': [
+          'error',
+          {
+            allowBoolean: true,
+            allowNumber: true,
+          },
+        ],
+        // Allow constant loop conditions
+        '@typescript-eslint/no-unnecessary-condition': [
+          'error',
+          { allowConstantLoopConditions: true },
+        ],
+        // Allow ternary operators to be used when checking for empty string
+        '@typescript-eslint/prefer-nullish-coalescing': [
+          'error',
+          { ignoreTernaryTests: true },
+        ],
       },
     },
 
@@ -107,6 +125,7 @@ export function generateTypescriptEslintConfig(options = []) {
         // Let Typescript handle it since it slows down linting significantly
         'import-x/namespace': 'off',
         'import-x/default': 'off',
+        'import-x/no-unresolved': 'off',
 
         // Allow named default imports without flagging them as errors
         'import-x/no-named-as-default': 'off',
@@ -126,7 +145,7 @@ export function generateTypescriptEslintConfig(options = []) {
     },
 
     // Unicorn Configs
-    eslintPluginUnicorn.configs['flat/recommended'],
+    eslintPluginUnicorn.configs['recommended'],
     {
       rules: {
         // Disable the rule that prevents using abbreviations in identifiers, allowing
@@ -140,6 +159,27 @@ export function generateTypescriptEslintConfig(options = []) {
         // Allow array callback references without flags, supporting patterns like
         // `array.filter(callbackFunction)`, which can improve readability and code brevity.
         'unicorn/no-array-callback-reference': 'off',
+
+        // Allow ternary operators to be used when appropriate (this conflicts with https://typescript-eslint.io/rules/prefer-nullish-coalescing/)
+        'unicorn/prefer-logical-operator-over-ternary': 'off',
+
+        // Allow the use of arrow functions in nested scopes
+        'unicorn/consistent-function-scoping': [
+          'error',
+          { checkArrowFunctions: false },
+        ],
+
+        // A bit over-eager flagging any module references
+        'unicorn/prefer-module': 'off',
+
+        // Allow error variables to be named anything
+        'unicorn/catch-error-name': 'off',
+
+        // False positives with array-like functions (https://github.com/sindresorhus/eslint-plugin-unicorn/issues/1394)
+        'unicorn/no-array-method-this-argument': 'off',
+
+        // Prevents returning undefined from functions which Typescript assumes is void
+        'unicorn/no-useless-undefined': 'off',
       },
     },
 
