@@ -1,51 +1,45 @@
 // @ts-check
 
 /**
- * @typedef {import('@typescript-eslint/utils/ts-eslint').FlatConfig.ConfigArray} ConfigArray
- * @typedef {import('@typescript-eslint/utils/ts-eslint').FlatConfig.Config} Config
+ * @typedef {import('eslint').Linter.Config} Config
  * @typedef {import('@ktam/lint-node/eslint-configs/typescript').GenerateTypescriptEslintConfigOptions} GenerateTypescriptEslintConfigOptions
  */
 
 import eslintPluginImportX from 'eslint-plugin-import-x';
 import reactJsxA11yPlugin from 'eslint-plugin-jsx-a11y';
 import reactPlugin from 'eslint-plugin-react';
-// @ts-ignore eslint-plugin-react-hooks does not have typings
-import reactHooksPlugin from 'eslint-plugin-react-hooks';
+import reactHooks from 'eslint-plugin-react-hooks';
+import { defineConfig } from 'eslint/config';
 import globals from 'globals';
-import tsEslint from 'typescript-eslint';
 
 /** @type {GenerateTypescriptEslintConfigOptions} */
 export const reactTypescriptEslintOptions = {
   extraDefaultProjectFiles: [],
 };
 
-/** @type {ConfigArray} */
-export const reactEslintConfig = tsEslint.config(
+/** @type {Config[]} */
+export const reactEslintConfig = defineConfig(
   // React & A11y
   {
     files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
-    extends: [
-      /** @type { Config } */ (reactPlugin.configs.flat?.recommended),
-      /** @type { Config } */ (reactPlugin.configs.flat?.['jsx-runtime']),
-      reactJsxA11yPlugin.flatConfigs.recommended,
-    ],
-    languageOptions: { globals: globals.browser },
+    ...reactPlugin.configs.flat.recommended,
+    languageOptions: {
+      ...reactPlugin.configs.flat.recommended.languageOptions,
+      globals: globals.browser,
+    },
     settings: {
       react: {
         version: 'detect',
       },
     },
   },
+  reactPlugin.configs.flat['jsx-runtime'],
+
+  // @ts-ignore - bug with incompatible types between @types/eslint and the new defineConfig helper
+  reactJsxA11yPlugin.flatConfigs.recommended,
 
   // React Hooks
-  // eslint-plugin-react-hooks does not use FlatConfig yet (https://github.com/facebook/react/pull/30774)
-  {
-    files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
-    plugins: {
-      'react-hooks': /** @type { any } */ (reactHooksPlugin),
-    },
-    rules: /** @type { any } */ (reactHooksPlugin.configs.recommended).rules,
-  },
+  reactHooks.configs['recommended-latest'],
 
   // Import-X
   eslintPluginImportX.flatConfigs.react,

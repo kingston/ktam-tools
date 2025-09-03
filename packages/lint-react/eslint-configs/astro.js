@@ -1,11 +1,12 @@
 // @ts-check
 
 /**
- * @typedef {import('@typescript-eslint/utils/ts-eslint').FlatConfig.ConfigArray} ConfigArray
+ * @typedef {import('eslint').Linter.Config} Config
  * @typedef {import('@ktam/lint-node/eslint-configs/typescript').GenerateTypescriptEslintConfigOptions} GenerateTypescriptEslintConfigOptions
  */
 
 import eslintPluginAstro from 'eslint-plugin-astro';
+import { defineConfig } from 'eslint/config';
 import tsEslint from 'typescript-eslint';
 
 /** @type {GenerateTypescriptEslintConfigOptions} */
@@ -14,8 +15,8 @@ export const astroTypescriptEslintOptions = {
   extraDefaultProjectFiles: ['astro.config.ts'],
 };
 
-/** @type {ConfigArray} */
-export const astroEslintConfig = tsEslint.config(
+/** @type {Config[]} */
+export const astroEslintConfig = defineConfig(
   // Astro
   ...eslintPluginAstro.configs['flat/recommended'],
   ...eslintPluginAstro.configs['flat/jsx-a11y-recommended'],
