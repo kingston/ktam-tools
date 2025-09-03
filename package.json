@@ -22,7 +22,7 @@
     "versions:check": "check-dependency-version-consistency ."
   },
   "devDependencies": {
-    "@changesets/cli": "2.29.2",
+    "@changesets/cli": "2.29.6",
     "@ktam/lint-node": "workspace:*",
     "check-dependency-version-consistency": "5.0.0"
   },
