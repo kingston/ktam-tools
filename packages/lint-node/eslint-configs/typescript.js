@@ -1,7 +1,7 @@
 // @ts-check
 
 /**
- * @typedef {import('@typescript-eslint/utils/ts-eslint').FlatConfig.ConfigArray} ConfigArray
+ * @typedef {import('eslint').Linter.Config} Config
  */
 
 import eslint from '@eslint/js';
@@ -9,6 +9,7 @@ import vitest from '@vitest/eslint-plugin';
 import { importX } from 'eslint-plugin-import-x';
 import perfectionist from 'eslint-plugin-perfectionist';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
+import { defineConfig, globalIgnores } from 'eslint/config';
 import tsEslint from 'typescript-eslint';
 
 /**
@@ -21,7 +22,7 @@ import tsEslint from 'typescript-eslint';
 /**
  * Generates a Typescript ESLint configuration
  * @param {GenerateTypescriptEslintConfigOptions[]} [options=[]] - Configuration options
- * @returns {ConfigArray} The generated ESLint configuration
+ * @returns {Config[]} The generated ESLint configuration
  */
 export function generateTypescriptEslintConfig(options = []) {
   const tsFileGlobs = [
@@ -44,7 +45,7 @@ export function generateTypescriptEslintConfig(options = []) {
     ...options.flatMap((option) => option.extraDefaultProjectFiles ?? []),
   ];
 
-  return tsEslint.config(
+  return defineConfig(
     // ESLint Configs for all files
     eslint.configs.recommended,
     {
@@ -118,6 +119,7 @@ export function generateTypescriptEslintConfig(options = []) {
     },
 
     // Import-X Configs
+    // @ts-ignore - bug with incompatible types between @types/eslint and typescript eslint config
     importX.flatConfigs.recommended,
     importX.flatConfigs.typescript,
     {
@@ -216,10 +218,11 @@ export function generateTypescriptEslintConfig(options = []) {
     {
       files: ['**/*.test.{ts,js,tsx,jsx}', 'tests/**'],
       plugins: { vitest },
+      // @ts-ignore
       rules: vitest.configs.recommended.rules,
     },
 
     // Global Ignores
-    { ignores: ['dist', 'node_modules'] },
+    globalIgnores(['dist', 'node_modules']),
   );
 }
