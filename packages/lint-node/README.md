@@ -51,7 +51,6 @@ export { default } from '@ktam/lint-node/prettier';
 ## Configuration Highlights
 
 - **ESLint**:
-
   - Enforces best practices for JavaScript and TypeScript.
   - Integrates TypeScript linting via `@typescript-eslint` for stricter type checks.
   - Includes **Unicorn** and **Perfectionist** plugins for improved code quality and import/export ordering.
