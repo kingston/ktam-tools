@@ -1,0 +1,11 @@
+{
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+  "eslint.debug": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "astro", // Enable .astro
+    "typescript", // Enable .ts
+    "typescriptreact" // Enable .tsx
+  ]
+}

@@ -5,7 +5,6 @@
 ### Patch Changes
 
 - aa69717: Upgrade dependencies across all packages
-
   - **lint-node**: Updated ESLint, TypeScript ESLint, and related plugins to latest versions
   - **lint-react**: Updated ESLint plugins, TypeScript ESLint, and Storybook plugin to latest versions
   - **tools-sample-astro**: Updated Astro to 5.13.5 and Tailwind CSS to 4.1.12
