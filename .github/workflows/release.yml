@@ -31,11 +31,12 @@ jobs:
           node-version-file: package.json
           registry-url: "https://registry.npmjs.org"
           scope: ${{ env.NPM_SCOPE }}
-      - name: Upgrade npm to latest version
-        run: npm install -g npm@latest
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Upgrade npm to v11
+        run: npm install -g npm@11
 
       - name: Create Release Pull Request or Publish to NPM
         id: changesets
