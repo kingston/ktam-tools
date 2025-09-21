@@ -5,6 +5,11 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+  pull-requests: write
+  id-token: write
+
 env:
   # Set the NPM_SCOPE environment variable to the NPM scope of your packages if any
   NPM_SCOPE: "@ktam"
@@ -15,24 +20,19 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-    environment: Production
-    permissions:
-      contents: write
-      pull-requests: write
-      id-token: write
-
+    environment: release
     steps:
       - name: Check out Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Set up pnpm
         uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2 # v4.0.0
       - name: Set up Node.JS
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version-file: package.json
-          cache: "pnpm"
           registry-url: "https://registry.npmjs.org"
           scope: ${{ env.NPM_SCOPE }}
+      - name: Upgrade npm to latest version
+        run: npm install -g npm@latest
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
