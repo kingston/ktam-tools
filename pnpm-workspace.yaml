@@ -1,6 +1,7 @@
 packages:
   - packages/*
 
+# Make sure to update the corresponding README.md in each package when updating the catalog
 catalog:
   eslint: ^9.36
   prettier: ^3.6
