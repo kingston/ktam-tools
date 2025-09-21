@@ -22,16 +22,16 @@
     "versions:check": "check-dependency-version-consistency ."
   },
   "devDependencies": {
-    "@changesets/cli": "2.29.6",
+    "@changesets/cli": "2.29.7",
     "@ktam/lint-node": "workspace:*",
     "check-dependency-version-consistency": "5.0.0"
   },
-  "packageManager": "pnpm@10.6.5",
+  "packageManager": "pnpm@10.17.0",
   "engines": {
-    "node": ">=20",
-    "pnpm": ">=10.6.0"
+    "node": ">=22",
+    "pnpm": ">=10.16.0"
   },
   "volta": {
-    "node": "22.14.0"
+    "node": "22.19.0"
   }
 }

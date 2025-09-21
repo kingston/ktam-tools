@@ -1,10 +1,29 @@
 packages:
   - packages/*
+
 catalog:
-  typescript: ^5.8
-  eslint: ^9.32
+  eslint: ^9.36
   prettier: ^3.6
+  typescript: ^5.8
+
 ignoredBuiltDependencies:
-  - '@tailwindcss/oxide'
+  - "@tailwindcss/oxide"
   - esbuild
   - unrs-resolver
+
+linkWorkspacePackages: true
+
+minimumReleaseAge: 1440
+
+minimumReleaseAgeExclude:
+  - "@ktam/*"
+
+publicHoistPattern:
+  - "@typescript-eslint/parser"
+  - eslint-plugin-jsx-a11y
+
+publishBranch: main
+
+savePrefix: ""
+
+saveWorkspaceProtocol: rolling
