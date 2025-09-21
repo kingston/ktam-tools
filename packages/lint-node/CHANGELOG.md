@@ -1,5 +1,11 @@
 # @ktam/lint-node
 
+## 0.5.1
+
+### Patch Changes
+
+- 474b363: Fix peer dependency version in README
+
 ## 0.5.0
 
 ### Minor Changes
@@ -7,6 +13,7 @@
 - c511ab1: Upgrade to Node.js 22 and latest dependencies
 
   This release upgrades the minimum Node.js version requirement from 20 to 22 and updates all dependencies to their latest versions. Key changes include:
+
   - **Node.js**: Upgraded minimum version from 20 to 22 (Volta pinned to 22.19.0)
   - **Package manager**: Updated pnpm from 10.6.5 to 10.17.0
   - **TypeScript**: Now using catalog version (5.8.2) for consistency
