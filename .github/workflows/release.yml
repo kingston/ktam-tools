@@ -29,6 +29,7 @@ jobs:
       - name: Set up Node.JS
         uses: actions/setup-node@v5
         with:
+          node-version-file: package.json
           registry-url: "https://registry.npmjs.org"
           scope: ${{ env.NPM_SCOPE }}
       - name: Upgrade npm to latest version
