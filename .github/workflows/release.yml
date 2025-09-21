@@ -5,11 +5,6 @@ on:
     branches:
       - main
 
-permissions:
-  contents: read
-  pull-requests: write
-  id-token: write
-
 env:
   # Set the NPM_SCOPE environment variable to the NPM scope of your packages if any
   NPM_SCOPE: "@ktam"
@@ -21,6 +16,10 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     environment: release
+    permissions:
+      contents: read
+      pull-requests: write
+      id-token: write
     steps:
       - name: Check out Repo
         uses: actions/checkout@v5
@@ -29,6 +28,7 @@ jobs:
       - name: Set up Node.JS
         uses: actions/setup-node@v5
         with:
+          node-version-file: package.json
           registry-url: "https://registry.npmjs.org"
           scope: ${{ env.NPM_SCOPE }}
       - name: Upgrade npm to latest version
