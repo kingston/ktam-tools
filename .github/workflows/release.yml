@@ -15,7 +15,7 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-    environment: Production
+    environment: release
     permissions:
       contents: write
       pull-requests: write
