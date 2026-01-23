@@ -18,6 +18,8 @@ minimumReleaseAge: 1440
 
 minimumReleaseAgeExclude:
   - "@ktam/*"
+  # Renovate security update: storybook@9.1.17
+  - storybook@9.1.17
 
 publicHoistPattern:
   - "@typescript-eslint/parser"
