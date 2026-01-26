@@ -65,6 +65,6 @@ export { default } from '@ktam/lint-node/prettier';
 
 Ensure you have the following peer dependencies installed:
 
-- `eslint@^9.36`
-- `prettier@^3.6`
-- `typescript@^5.8`
+- `eslint@^9.39`
+- `prettier@^3.8`
+- `typescript@^5.9.3`
