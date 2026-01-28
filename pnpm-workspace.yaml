@@ -18,6 +18,8 @@ minimumReleaseAge: 1440
 
 minimumReleaseAgeExclude:
   - "@ktam/*"
+  # Renovate security update: pnpm@10.28.2
+  - pnpm@10.28.2
 
 publicHoistPattern:
   - "@typescript-eslint/parser"

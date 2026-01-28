@@ -26,10 +26,10 @@
     "@ktam/lint-node": "workspace:*",
     "check-dependency-version-consistency": "5.0.0"
   },
-  "packageManager": "pnpm@10.17.0",
+  "packageManager": "pnpm@10.28.2",
   "engines": {
     "node": ">=22",
-    "pnpm": ">=10.16.0"
+    "pnpm": ">=10.28.2"
   },
   "volta": {
     "node": "22.19.0"
