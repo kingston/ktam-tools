@@ -1,15 +1,17 @@
 packages:
   - packages/*
 
-# Make sure to update the corresponding README.md in each package when updating the catalog
+blockExoticSubdeps: true
+
 catalog:
-  eslint: ^9.36
-  prettier: ^3.6
-  typescript: ^5.8
+  eslint: ^9.39
+  prettier: ^3.8
+  typescript: ^5.9.3
 
 ignoredBuiltDependencies:
   - "@tailwindcss/oxide"
   - esbuild
+  - sharp
   - unrs-resolver
 
 linkWorkspacePackages: true
@@ -19,12 +21,12 @@ minimumReleaseAge: 1440
 minimumReleaseAgeExclude:
   - "@ktam/*"
 
-publicHoistPattern:
-  - "@typescript-eslint/parser"
-  - eslint-plugin-jsx-a11y
-
 publishBranch: main
 
 savePrefix: ""
 
 saveWorkspaceProtocol: rolling
+
+trustPolicy: no-downgrade
+
+trustPolicyIgnoreAfter: 10080 # 1 week
