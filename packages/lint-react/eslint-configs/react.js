@@ -39,18 +39,11 @@ export const reactEslintConfig = defineConfig(
   reactJsxA11yPlugin.flatConfigs.recommended,
 
   // React Hooks
-  reactHooks.configs['recommended-latest'],
+  reactHooks.configs.flat['recommended-latest'],
 
   // Import-X
+  // @ts-ignore - bug with types with typescript-eslint (https://github.com/un-ts/eslint-plugin-import-x/issues/421)
   eslintPluginImportX.flatConfigs.react,
-
-  // Unicorn
-  {
-    rules: {
-      // We use replace since it is not supported by ES2020
-      'unicorn/prefer-string-replace-all': 'off',
-    },
-  },
 );
 
 export default reactEslintConfig;

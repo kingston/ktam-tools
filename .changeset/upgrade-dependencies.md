@@ -3,7 +3,13 @@
 "@ktam/lint-react": minor
 ---
 
-Upgrade dependencies
+Upgrade dependencies and Node 24 support
+
+### Node 24 / TypeScript Config Updates
+
+- Updated minimum Node version to 24 (LTS)
+- Updated tsconfig to use `target: ES2024` and `lib: ["ES2024"]`
+- Changed `moduleResolution` to `NodeNext` for better ESM compatibility
 
 ### @ktam/lint-node
 

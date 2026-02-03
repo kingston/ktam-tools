@@ -22,8 +22,7 @@
   },
   "devDependencies": {
     "@ktam/lint-node": "workspace:*",
-    "@tsconfig/node20": "20.1.6",
-    "@types/node": "24.5.2",
+    "@types/node": "24.10.9",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:",
@@ -31,7 +30,7 @@
     "vitest": "4.0.18"
   },
   "engines": {
-    "node": ">=22",
-    "pnpm": ">=9"
+    "node": ">=24",
+    "pnpm": ">=10"
   }
 }
