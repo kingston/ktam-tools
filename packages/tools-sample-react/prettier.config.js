@@ -1,1 +1,5 @@
-export { default } from '@ktam/lint-react/prettier';
+import { generatePrettierReactConfig } from '@ktam/lint-react/prettier';
+
+export default generatePrettierReactConfig({
+  tailwind: false,
+});

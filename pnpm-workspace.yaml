@@ -21,10 +21,6 @@ minimumReleaseAge: 1440
 minimumReleaseAgeExclude:
   - "@ktam/*"
 
-publicHoistPattern:
-  - "@typescript-eslint/parser"
-  - eslint-plugin-jsx-a11y
-
 publishBranch: main
 
 savePrefix: ""

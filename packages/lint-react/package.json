@@ -24,10 +24,13 @@
     "./eslint-configs/storybook": "./eslint-configs/storybook.js",
     "./eslint-configs/tailwind": "./eslint-configs/tailwind.js",
     "./prettier": "./prettier.config.react.js",
-    "./prettier-astro": "./prettier.config.astro.js"
+    "./prettier-astro": "./prettier.config.astro.js",
+    "./prettier-configs/react": "./prettier-configs/react.js",
+    "./prettier-configs/astro": "./prettier-configs/astro.js"
   },
   "files": [
     "eslint-configs",
+    "prettier-configs",
     "eslint.config.astro.js",
     "eslint.config.react.js",
     "prettier.config.react.js",

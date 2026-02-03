@@ -1,69 +1,111 @@
-# @ktam/lint-node
+# @ktam/lint-react
 
-This package provides a reusable set of **ESLint** and **Prettier** configurations for **ESM Node.js** projects.
+This package provides reusable **ESLint** and **Prettier** configurations for **React** and **Astro** projects.
 
 ## Features
 
-- **ESLint configuration** tailored for ESM-based Node.js projects.
-- **Prettier configuration** with enforced code style rules.
-- Compatibility with **Vitest** for testing and **Unicorn** for improving code quality.
-- **Prettier Plugin** for formatting and automatically sorting `package.json` properties.
+- **ESLint configuration** tailored for React and Astro projects
+- **Prettier configuration** with Tailwind CSS support
+- Integration with React hooks linting, JSX accessibility, and Storybook
+- Extends `@ktam/lint-node` with React-specific rules
 
 ## Installation
 
-To install this package, you'll need **pnpm** (version 10 or higher) and **Node.js** (version 24 or higher):
-
 ```bash
-pnpm add -D @ktam/lint-node
+pnpm add -D @ktam/lint-react
 ```
 
-Ensure your project is using **TypeScript** and **ESLint** compatible versions:
+Ensure your project has the required peer dependencies:
 
 ```bash
-pnpm add -D typescript eslint
+pnpm add -D typescript eslint prettier
 ```
 
 ## Usage
 
 ### ESLint Configuration
 
-To use the **ESLint** configuration, create an `eslint.config.js` in the root of your project and import the configuration:
+Create an `eslint.config.js` in the root of your project:
 
 ```js
-export { default } from '@ktam/lint-node/eslint';
-```
+// For React projects
+export { default } from '@ktam/lint-react/eslint';
 
-You can adjust or extend the configuration if needed by modifying the imported rules.
+// For Astro projects
+export { default } from '@ktam/lint-react/eslint-astro';
+```
 
 ### Prettier Configuration
 
-To apply the **Prettier** configuration, create a `prettier.config.js` file in the root of your project and import the configuration:
+Create a `prettier.config.js` file in the root of your project:
 
 ```js
-export { default } from '@ktam/lint-node/prettier';
+// Basic usage (includes Tailwind support with default stylesheet path)
+export { default } from '@ktam/lint-react/prettier';
+
+// For Astro projects
+export { default } from '@ktam/lint-react/prettier-astro';
 ```
 
-## File Structure
+### Customizing Prettier Configuration
 
-- `eslint.config.base.js`: Base ESLint configuration, including rules for JavaScript, TypeScript, and Node.js projects.
-- `prettier.config.base.js`: Base Prettier configuration enforcing code styles such as 2-space tabs, single quotes, and trailing commas.
+Use the generator functions for more control:
 
-## Configuration Highlights
+```js
+import { generatePrettierReactConfig } from '@ktam/lint-react/prettier';
 
-- **ESLint**:
-  - Enforces best practices for JavaScript and TypeScript.
-  - Integrates TypeScript linting via `@typescript-eslint` for stricter type checks.
-  - Includes **Unicorn** and **Perfectionist** plugins for improved code quality and import/export ordering.
-  - Custom rules to ensure concise, maintainable code (e.g., disallowing `console.log`, enforcing template literals).
-  - Special configurations for **Vitest** testing files.
+export default generatePrettierReactConfig({
+  // Disable Tailwind support
+  tailwind: false,
+});
+```
 
-- **Prettier**:
-  - Ensures consistent formatting across JavaScript, TypeScript, and `package.json` files.
-  - Uses `prettier-plugin-packagejson` to format `package.json`.
+```js
+import { generatePrettierReactConfig } from '@ktam/lint-react/prettier';
+
+export default generatePrettierReactConfig({
+  // Custom Tailwind stylesheet path (default: './src/styles.css')
+  tailwindStylesheet: './styles/main.css',
+});
+```
+
+```js
+import { generatePrettierReactConfig } from '@ktam/lint-react/prettier';
+
+export default generatePrettierReactConfig({
+  // Custom Tailwind functions to sort classes in
+  tailwindFunctions: ['clsx', 'cn', 'cva', 'tw'],
+});
+```
+
+For Astro projects:
+
+```js
+import { generatePrettierAstroConfig } from '@ktam/lint-react/prettier';
+
+export default generatePrettierAstroConfig({
+  tailwindStylesheet: './src/styles/global.css',
+});
+```
+
+### Generator Options
+
+| Option               | Type       | Default                 | Description                               |
+| -------------------- | ---------- | ----------------------- | ----------------------------------------- |
+| `tailwind`           | `boolean`  | `true`                  | Enable/disable Tailwind CSS plugin        |
+| `tailwindStylesheet` | `string`   | `'./src/styles.css'`    | Path to Tailwind CSS stylesheet (for v4+) |
+| `tailwindFunctions`  | `string[]` | `['clsx', 'cn', 'cva']` | Functions to sort Tailwind classes in     |
+
+## Exports
+
+| Export                            | Description                               |
+| --------------------------------- | ----------------------------------------- |
+| `@ktam/lint-react/eslint`         | ESLint config for React                   |
+| `@ktam/lint-react/eslint-astro`   | ESLint config for Astro                   |
+| `@ktam/lint-react/prettier`       | Prettier config for React (with Tailwind) |
+| `@ktam/lint-react/prettier-astro` | Prettier config for Astro (with Tailwind) |
 
 ## Peer Dependencies
-
-Ensure you have the following peer dependencies installed:
 
 - `eslint@^9.39`
 - `prettier@^3.8`

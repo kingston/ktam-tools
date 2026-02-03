@@ -15,17 +15,26 @@ public-hoist-pattern[]=eslint-plugin-jsx-a11y
 
 ## Tailwind CSS v4 Configuration
 
-When using Tailwind CSS v4 with Prettier, you must specify your CSS file entry point in the Prettier configuration. The default configuration in this package points to `./src/styles.css`, but you can override it in your project's Prettier configuration:
+When using Tailwind CSS v4 with Prettier, you can customize the stylesheet path using the generator function. The default path is `./src/styles.css`:
 
 ```js
 // prettier.config.js
-import reactPrettierConfig from '@ktam/lint-react/prettier';
+import { generatePrettierReactConfig } from '@ktam/lint-react/prettier';
 
-export default {
-  ...reactPrettierConfig,
-  // Override with your project's Tailwind CSS entry point if needed
+export default generatePrettierReactConfig({
   tailwindStylesheet: './your-project-path/app.css',
-};
+});
+```
+
+To disable Tailwind support entirely:
+
+```js
+// prettier.config.js
+import { generatePrettierReactConfig } from '@ktam/lint-react/prettier';
+
+export default generatePrettierReactConfig({
+  tailwind: false,
+});
 ```
 
 The repository is structured into two packages, each serving a different project type:
