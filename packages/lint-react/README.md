@@ -11,7 +11,7 @@ This package provides a reusable set of **ESLint** and **Prettier** configuratio
 
 ## Installation
 
-To install this package, you'll need **pnpm** (version 9 or higher) and **Node.js** (version 20 or higher):
+To install this package, you'll need **pnpm** (version 10 or higher) and **Node.js** (version 24 or higher):
 
 ```bash
 pnpm add -D @ktam/lint-node
@@ -65,6 +65,6 @@ export { default } from '@ktam/lint-node/prettier';
 
 Ensure you have the following peer dependencies installed:
 
-- `eslint@^9.36`
-- `prettier@^3.6`
-- `typescript@^5.8`
+- `eslint@^9.39`
+- `prettier@^3.8`
+- `typescript@^5.9.3`
