@@ -21,11 +21,8 @@ export const storybookTypescriptEslintOptions = {
 /** @type {Config[]} */
 export const storybookEslintConfig = defineConfig(
   // Storybook
-  {
-    files: ['**/*.stories.{ts,tsx,js,jsx,mjs,cjs}'],
-    // @ts-ignore -- TypeScript resolution bug where it expects a named export called default
-    extends: storybookPlugin.configs['flat/recommended'],
-  },
+  // @ts-ignore - bug with types with typescript-eslint (https://github.com/storybookjs/storybook/issues/32405)
+  ...storybookPlugin.configs['flat/recommended'],
 
   // Ignores
   globalIgnores(['storybook-static']),

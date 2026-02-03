@@ -35,7 +35,6 @@ export const reactEslintConfig = defineConfig(
   },
   reactPlugin.configs.flat['jsx-runtime'],
 
-  // @ts-ignore - bug with incompatible types between @types/eslint and the new defineConfig helper
   reactJsxA11yPlugin.flatConfigs.recommended,
 
   // React Hooks
