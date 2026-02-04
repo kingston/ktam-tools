@@ -1,0 +1,80 @@
+@import 'tailwindcss';
+
+/* Custom CSS variables and base styles */
+@layer base {
+  :root {
+    --color-background: #242424;
+    --color-foreground: rgba(255, 255, 255, 0.87);
+    --color-link: #646cff;
+    --color-link-hover: #535bf2;
+    --color-muted: #888;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --color-background: #ffffff;
+      --color-foreground: #213547;
+      --color-link-hover: #747bff;
+    }
+  }
+
+  html {
+    color-scheme: light dark;
+  }
+
+  body {
+    @apply m-0 flex min-h-screen min-w-[320px] place-items-center;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  a {
+    @apply font-medium no-underline;
+    color: var(--color-link);
+  }
+
+  a:hover {
+    color: var(--color-link-hover);
+  }
+
+  #root {
+    @apply mx-auto flex w-full max-w-5xl justify-center;
+  }
+}
+
+/* Component styles */
+@layer components {
+  .logo {
+    @apply h-24 p-6 transition-[filter] duration-300;
+    will-change: filter;
+  }
+
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+
+  .logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
+}
+
+/* Animations */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}

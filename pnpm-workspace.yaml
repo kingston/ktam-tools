@@ -30,3 +30,7 @@ saveWorkspaceProtocol: rolling
 trustPolicy: no-downgrade
 
 trustPolicyIgnoreAfter: 10080 # 1 week
+
+publicHoistPattern:
+  - "@typescript-eslint/parser"
+  - "eslint-plugin-jsx-a11y"
