@@ -12,7 +12,7 @@ function App(): React.JSX.Element {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1 className="text-5xl leading-tight">Vite + React</h1>
+      <h1 className="text-5xl/tight">Vite + React</h1>
       <div className="p-8">
         <button
           className="cursor-pointer rounded-lg border border-transparent bg-neutral-900 px-5 py-2.5 font-medium transition-colors hover:border-indigo-500 focus:outline-4 dark:bg-neutral-100 dark:text-neutral-900"
@@ -24,7 +24,7 @@ function App(): React.JSX.Element {
         </button>
         <p>
           Edit{' '}
-          <code className="rounded bg-neutral-800 px-1 py-0.5 text-sm dark:bg-neutral-200">
+          <code className="rounded-sm bg-neutral-800 px-1 py-0.5 text-sm dark:bg-neutral-200">
             src/App.tsx
           </code>{' '}
           and save to test HMR
