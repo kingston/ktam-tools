@@ -6,6 +6,7 @@ This package provides reusable **ESLint** and **Prettier** configurations for **
 
 - **ESLint configuration** tailored for React and Astro projects
 - **Prettier configuration** with Tailwind CSS support
+- **Tailwind CSS linting** via `eslint-plugin-better-tailwindcss` (opt-in)
 - Integration with React hooks linting, JSX accessibility, and Storybook
 - Extends `@ktam/lint-node` with React-specific rules
 
@@ -34,6 +35,51 @@ export { default } from '@ktam/lint-react/eslint';
 // For Astro projects
 export { default } from '@ktam/lint-react/eslint-astro';
 ```
+
+### Customizing ESLint Configuration
+
+Use the generator functions for more control:
+
+```js
+import { generateReactEslintConfig } from '@ktam/lint-react/eslint';
+
+export default generateReactEslintConfig({
+  // Enable Tailwind CSS linting (uses default entry point ./src/styles.css)
+  tailwind: {},
+});
+```
+
+```js
+import { generateReactEslintConfig } from '@ktam/lint-react/eslint';
+
+export default generateReactEslintConfig({
+  // Custom Tailwind CSS entry point and allowed custom classes
+  tailwind: {
+    entryPoint: './src/app.css',
+    customClasses: ['my-custom-class'],
+  },
+});
+```
+
+For Astro projects:
+
+```js
+import { generateAstroEslintConfig } from '@ktam/lint-react/eslint-astro';
+
+export default generateAstroEslintConfig({
+  tailwind: {
+    entryPoint: './src/styles/global.css',
+  },
+});
+```
+
+### ESLint Generator Options
+
+| Option                   | Type       | Default              | Description                                             |
+| ------------------------ | ---------- | -------------------- | ------------------------------------------------------- |
+| `tailwind`               | `object`   | —                    | Enable Tailwind CSS linting (omit to disable)           |
+| `tailwind.entryPoint`    | `string`   | `'./src/styles.css'` | Path to the Tailwind CSS entry point                    |
+| `tailwind.customClasses` | `string[]` | `[]`                 | Custom class names to allow (treated as regex patterns) |
 
 ### Prettier Configuration
 
@@ -88,7 +134,7 @@ export default generatePrettierAstroConfig({
 });
 ```
 
-### Generator Options
+### Prettier Generator Options
 
 | Option               | Type       | Default                 | Description                               |
 | -------------------- | ---------- | ----------------------- | ----------------------------------------- |
