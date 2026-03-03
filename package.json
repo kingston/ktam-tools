@@ -26,7 +26,7 @@
     "@ktam/lint-node": "workspace:*",
     "check-dependency-version-consistency": "6.0.0"
   },
-  "packageManager": "pnpm@10.28.2",
+  "packageManager": "pnpm@10.30.3",
   "engines": {
     "node": ">=24",
     "pnpm": ">=10.16.0"
