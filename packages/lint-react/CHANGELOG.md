@@ -1,5 +1,19 @@
 # @ktam/lint-react
 
+## 0.7.0
+
+### Minor Changes
+
+- 2604203: Add Tailwind CSS linting support via eslint-plugin-better-tailwindcss
+
+  - Added `generateReactEslintConfig()` and `generateAstroEslintConfig()` functions for customizable ESLint configurations
+  - Tailwind CSS linting is opt-in via the `tailwind` option with configurable `entryPoint` and `customClasses`
+  - Uses the `recommended` preset from eslint-plugin-better-tailwindcss with class ordering and line wrapping disabled (handled by prettier-plugin-tailwindcss)
+
+- a948550: Remove eslint-plugin-storybook from the default React ESLint configuration
+
+  The Storybook ESLint plugin is no longer bundled in the default React lint config. Projects that need Storybook linting should add `eslint-plugin-storybook` directly as a dependency and configure it in their own ESLint config.
+
 ## 0.6.0
 
 ### Minor Changes
@@ -11,12 +25,12 @@
   Added `generatePrettierReactConfig` and `generatePrettierAstroConfig` functions that allow customizing Tailwind CSS settings:
 
   ```js
-  import { generatePrettierReactConfig } from '@ktam/lint-react/prettier';
+  import { generatePrettierReactConfig } from "@ktam/lint-react/prettier";
 
   export default generatePrettierReactConfig({
     tailwind: false, // Disable Tailwind support
-    tailwindStylesheet: './styles/main.css', // Custom stylesheet path
-    tailwindFunctions: ['clsx', 'cn', 'cva'], // Functions to sort classes in
+    tailwindStylesheet: "./styles/main.css", // Custom stylesheet path
+    tailwindFunctions: ["clsx", "cn", "cva"], // Functions to sort classes in
   });
   ```
 
@@ -33,17 +47,19 @@
   Existing usage continues to work unchanged:
 
   ```js
-  export { default } from '@ktam/lint-react/prettier';
+  export { default } from "@ktam/lint-react/prettier";
   ```
 
 - a999f3f: Upgrade dependencies and Node 24 support
 
   ### Node 24 / TypeScript Config Updates
+
   - Updated minimum Node version to 24 (LTS)
   - Updated tsconfig to use `target: ES2024` and `lib: ["ES2024"]`
   - Changed `moduleResolution` to `NodeNext` for better ESM compatibility
 
   ### @ktam/lint-node
+
   - `@eslint/js`: 9.34.0 → 9.39.2
   - `@vitest/eslint-plugin`: 1.3.12 → 1.6.6
   - `eslint-plugin-perfectionist`: 4.15.0 → 5.4.0
@@ -53,6 +69,7 @@
   - `typescript-eslint`: 8.44.0 → 8.53.1
 
   ### @ktam/lint-react
+
   - `@typescript-eslint/parser`: 8.44.0 → 8.53.1
   - `eslint-plugin-astro`: 1.3.1 → 1.5.0
   - `eslint-plugin-react-hooks`: 5.2.0 → 7.0.1
@@ -63,6 +80,7 @@
   ### Peer Dependencies
 
   Updated minimum peer dependency versions:
+
   - `eslint`: ^9.36 → ^9.39
   - `prettier`: ^3.6 → ^3.8
   - `typescript`: ^5.8 → ^5.9.3
@@ -87,6 +105,7 @@
 - c511ab1: Upgrade to Node.js 22 and latest dependencies
 
   This release upgrades the minimum Node.js version requirement from 20 to 22 and updates all dependencies to their latest versions. Key changes include:
+
   - **Node.js**: Upgraded minimum version from 20 to 22 (Volta pinned to 22.19.0)
   - **Package manager**: Updated pnpm from 10.6.5 to 10.17.0
   - **TypeScript**: Now using catalog version (5.8.2) for consistency
@@ -107,6 +126,7 @@
 ### Patch Changes
 
 - aa69717: Upgrade dependencies across all packages
+
   - **lint-node**: Updated ESLint, TypeScript ESLint, and related plugins to latest versions
   - **lint-react**: Updated ESLint plugins, TypeScript ESLint, and Storybook plugin to latest versions
   - **tools-sample-astro**: Updated Astro to 5.13.5 and Tailwind CSS to 4.1.12
@@ -129,6 +149,7 @@
 
 - 7cebd48: Upgrade eslint-plugin-import-x to 4.14.1 and @vitest/eslint-plugin to 1.2.1
 - 96e2f21: feat: Add support for Tailwind CSS v4 and update PNPM v10 compatibility
+
   - Add Tailwind CSS v4 stylesheet configuration in prettier.config.react.js
   - Add documentation for PNPM v10 compatibility with Astro projects
   - Document Tailwind CSS v4 configuration requirements in README
