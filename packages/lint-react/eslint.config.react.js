@@ -13,10 +13,6 @@ import {
   reactTypescriptEslintOptions,
 } from './eslint-configs/react.js';
 import {
-  storybookEslintConfig,
-  storybookTypescriptEslintOptions,
-} from './eslint-configs/storybook.js';
-import {
   generateTailwindEslintConfig,
   tailwindTypescriptEslintOptions,
 } from './eslint-configs/tailwind.js';
@@ -38,11 +34,9 @@ export function generateReactEslintConfig(options = {}) {
     ...generateTypescriptEslintConfig([
       reactTypescriptEslintOptions,
       ...(tailwindOptions ? [tailwindTypescriptEslintOptions] : []),
-      storybookTypescriptEslintOptions,
     ]),
     ...reactEslintConfig,
     ...(tailwindOptions ? generateTailwindEslintConfig(tailwindOptions) : []),
-    ...storybookEslintConfig,
     prettierEslintConfig,
   ];
 }
