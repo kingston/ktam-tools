@@ -64,6 +64,11 @@ export function generateTypescriptEslintConfig(options = []) {
         'prefer-arrow-callback': ['error', { allowNamedFunctions: true }],
         // Disallow renaming imports, exports, or destructured variables to the same name.
         'no-useless-rename': 'error',
+        // Require rethrown errors to preserve the caught error via `cause` so stack traces aren't lost.
+        'preserve-caught-error': 'error',
+        // Flag identifiers in inner scopes that shadow outer bindings.
+        // Disabled again below for TS files in favor of the typescript-eslint extension.
+        'no-shadow': 'error',
       },
     },
 
@@ -115,6 +120,16 @@ export function generateTypescriptEslintConfig(options = []) {
           'error',
           { ignoreTernaryTests: true },
         ],
+        // Core no-shadow false-positives on type/value shadowing and overloads; use the TS extension instead.
+        'no-shadow': 'off',
+        '@typescript-eslint/no-shadow': 'error',
+        // Flag redundant `this.x = x` inside constructors that already use parameter properties.
+        '@typescript-eslint/no-unnecessary-parameter-property-assignment':
+          'error',
+        // Flag `export {}` in files that already have other exports.
+        '@typescript-eslint/no-useless-empty-export': 'error',
+        // Require a comparator for `.sort()` to avoid the lexicographic number-sort footgun.
+        '@typescript-eslint/require-array-sort-compare': 'error',
       },
     },
 

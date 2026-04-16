@@ -21,7 +21,7 @@ function App(): React.JSX.Element {
         <button
           className="cursor-pointer rounded-lg border border-transparent bg-neutral-900 px-5 py-2.5 font-medium text-white transition-colors hover:border-indigo-500 focus:outline-4 dark:bg-neutral-100 dark:text-neutral-900"
           onClick={() => {
-            setCount((count) => count + 1);
+            setCount((prev) => prev + 1);
           }}
         >
           count is {count}
