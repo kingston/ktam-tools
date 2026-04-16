@@ -20,6 +20,8 @@ minimumReleaseAge: 1440
 
 minimumReleaseAgeExclude:
   - "@ktam/*"
+  # Renovate security update: vite@7.3.2
+  - vite@7.3.2
 
 publishBranch: main
 
