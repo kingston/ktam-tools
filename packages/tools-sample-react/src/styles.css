@@ -47,22 +47,6 @@
   }
 }
 
-/* Component styles */
-@layer components {
-  .logo {
-    @apply h-24 p-6 transition-[filter] duration-300;
-    will-change: filter;
-  }
-
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-
-  .logo.react:hover {
-    filter: drop-shadow(0 0 2em #61dafbaa);
-  }
-}
-
 /* Animations */
 @keyframes logo-spin {
   from {
@@ -73,8 +57,6 @@
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+@theme {
+  --animate-logo-spin: logo-spin 20s linear infinite;
 }
