@@ -1,5 +1,12 @@
 # @ktam/lint-node
 
+## 0.6.1
+
+### Patch Changes
+
+- bfe2a16: Enable `preserve-caught-error`, `no-shadow` (via `@typescript-eslint/no-shadow` on TS files), `@typescript-eslint/no-unnecessary-parameter-property-assignment`, `@typescript-eslint/no-useless-empty-export`, and `@typescript-eslint/require-array-sort-compare` in the base lint configs.
+- 3a99c6a: Upgrade lint dependencies to latest versions, including typescript-eslint 8.58.2, eslint-plugin-unicorn 64.0.0, eslint-plugin-perfectionist 5.8.0, and eslint-plugin-astro 1.7.0.
+
 ## 0.6.0
 
 ### Minor Changes
@@ -7,11 +14,13 @@
 - a999f3f: Upgrade dependencies and Node 24 support
 
   ### Node 24 / TypeScript Config Updates
+
   - Updated minimum Node version to 24 (LTS)
   - Updated tsconfig to use `target: ES2024` and `lib: ["ES2024"]`
   - Changed `moduleResolution` to `NodeNext` for better ESM compatibility
 
   ### @ktam/lint-node
+
   - `@eslint/js`: 9.34.0 → 9.39.2
   - `@vitest/eslint-plugin`: 1.3.12 → 1.6.6
   - `eslint-plugin-perfectionist`: 4.15.0 → 5.4.0
@@ -21,6 +30,7 @@
   - `typescript-eslint`: 8.44.0 → 8.53.1
 
   ### @ktam/lint-react
+
   - `@typescript-eslint/parser`: 8.44.0 → 8.53.1
   - `eslint-plugin-astro`: 1.3.1 → 1.5.0
   - `eslint-plugin-react-hooks`: 5.2.0 → 7.0.1
@@ -31,6 +41,7 @@
   ### Peer Dependencies
 
   Updated minimum peer dependency versions:
+
   - `eslint`: ^9.36 → ^9.39
   - `prettier`: ^3.6 → ^3.8
   - `typescript`: ^5.8 → ^5.9.3
@@ -48,6 +59,7 @@
 - c511ab1: Upgrade to Node.js 22 and latest dependencies
 
   This release upgrades the minimum Node.js version requirement from 20 to 22 and updates all dependencies to their latest versions. Key changes include:
+
   - **Node.js**: Upgraded minimum version from 20 to 22 (Volta pinned to 22.19.0)
   - **Package manager**: Updated pnpm from 10.6.5 to 10.17.0
   - **TypeScript**: Now using catalog version (5.8.2) for consistency
