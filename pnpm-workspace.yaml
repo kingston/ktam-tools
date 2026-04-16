@@ -4,9 +4,11 @@ packages:
 blockExoticSubdeps: true
 
 catalog:
-  eslint: ^9.39
-  prettier: ^3.8
-  typescript: ^5.9.3
+  eslint: ^9.39.4
+  prettier: ^3.8.2
+  typescript: ^5.9
+
+dedupePeers: true
 
 ignoredBuiltDependencies:
   - "@tailwindcss/oxide"
@@ -16,10 +18,14 @@ ignoredBuiltDependencies:
 
 linkWorkspacePackages: true
 
-minimumReleaseAge: 1440
+minimumReleaseAge: 2880 # 48 hours
 
 minimumReleaseAgeExclude:
   - "@ktam/*"
+
+publicHoistPattern:
+  - "@typescript-eslint/parser"
+  - "eslint-plugin-jsx-a11y"
 
 publishBranch: main
 
@@ -30,7 +36,3 @@ saveWorkspaceProtocol: rolling
 trustPolicy: no-downgrade
 
 trustPolicyIgnoreAfter: 10080 # 1 week
-
-publicHoistPattern:
-  - "@typescript-eslint/parser"
-  - "eslint-plugin-jsx-a11y"
