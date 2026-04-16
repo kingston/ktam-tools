@@ -11,7 +11,7 @@ function App(): React.JSX.Element {
         <a href="https://react.dev" target="_blank" rel="noreferrer">
           <img
             src={reactLogo}
-            className="h-24 p-6 motion-safe:animate-logo-spin will-change-[filter] transition-[filter] duration-300 hover:drop-shadow-[0_0_2em_#61dafbaa]"
+            className="h-24 p-6 transition-[filter] duration-300 will-change-[filter] hover:drop-shadow-[0_0_2em_#61dafbaa] motion-safe:animate-logo-spin"
             alt="React logo"
           />
         </a>
