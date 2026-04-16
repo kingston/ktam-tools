@@ -1,3 +1,4 @@
+/* eslint-disable better-tailwindcss/no-unknown-classes -- allowed logo and react */
 import { useState } from 'react';
 
 import reactLogo from './assets/react.svg';
