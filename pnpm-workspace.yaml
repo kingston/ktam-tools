@@ -22,6 +22,8 @@ minimumReleaseAge: 2880 # 48 hours
 
 minimumReleaseAgeExclude:
   - "@ktam/*"
+  # Renovate security update: astro@6.1.10
+  - astro@6.1.10
 
 publicHoistPattern:
   - "@typescript-eslint/parser"
