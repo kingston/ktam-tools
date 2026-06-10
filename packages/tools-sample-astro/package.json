@@ -21,7 +21,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.8",
+    "@astrojs/check": "0.9.9",
     "@tailwindcss/vite": "4.2.2",
     "astro": "^6.1.6",
     "tailwindcss": "^4.2.2"
@@ -34,7 +34,6 @@
     "typescript": "catalog:"
   },
   "engines": {
-    "node": ">=24",
-    "pnpm": ">=10"
+    "node": ">=24"
   }
 }

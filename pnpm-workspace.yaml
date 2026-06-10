@@ -1,8 +1,6 @@
 packages:
   - packages/*
 
-blockExoticSubdeps: true
-
 catalog:
   eslint: ^9.39.4
   prettier: ^3.8.2
@@ -10,29 +8,23 @@ catalog:
 
 dedupePeers: true
 
-ignoredBuiltDependencies:
-  - "@tailwindcss/oxide"
-  - esbuild
-  - sharp
-  - unrs-resolver
-
-linkWorkspacePackages: true
-
 minimumReleaseAge: 2880 # 48 hours
-
 minimumReleaseAgeExclude:
-  - "@ktam/*"
+  - '@ktam/*'
+
+trustPolicy: no-downgrade
+trustPolicyIgnoreAfter: 10080 # 1 week
 
 publicHoistPattern:
-  - "@typescript-eslint/parser"
-  - "eslint-plugin-jsx-a11y"
+  - '@typescript-eslint/parser'
+  - 'eslint-plugin-jsx-a11y'
 
 publishBranch: main
 
-savePrefix: ""
-
+savePrefix: ''
 saveWorkspaceProtocol: rolling
 
-trustPolicy: no-downgrade
-
-trustPolicyIgnoreAfter: 10080 # 1 week
+allowBuilds:
+  esbuild: false
+  sharp: false
+  unrs-resolver: false
