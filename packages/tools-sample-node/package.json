@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@ktam/lint-node": "workspace:*",
-    "@types/node": "24.10.9",
+    "@types/node": "24.13.2",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:",

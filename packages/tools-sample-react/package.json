@@ -20,7 +20,7 @@
   "devDependencies": {
     "@ktam/lint-react": "workspace:*",
     "@tailwindcss/vite": "4.2.2",
-    "@types/node": "24.10.9",
+    "@types/node": "24.13.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
