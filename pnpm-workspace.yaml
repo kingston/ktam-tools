@@ -3,8 +3,8 @@ packages:
 
 catalog:
   eslint: ^9.39.4
-  prettier: ^3.8.2
-  typescript: ^5.9
+  prettier: ^3.8.4
+  typescript: ^5.9.3
 
 dedupePeers: true
 

@@ -23,12 +23,12 @@
   "dependencies": {
     "@astrojs/check": "0.9.9",
     "@tailwindcss/vite": "4.2.2",
-    "astro": "^6.1.6",
+    "astro": "^6.4.6",
     "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
     "@ktam/lint-react": "workspace:*",
-    "@types/node": "24.10.9",
+    "@types/node": "24.13.2",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:"
