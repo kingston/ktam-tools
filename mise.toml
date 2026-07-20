@@ -2,7 +2,7 @@ min_version = "2025.8.14"
 
 [tools]
 node = "24.16.0"
-pnpm = "11.5.2"
+pnpm = "11.8.0"
 
 [settings]
 lockfile = true
