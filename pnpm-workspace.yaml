@@ -11,6 +11,8 @@ dedupePeers: true
 minimumReleaseAge: 2880 # 48 hours
 minimumReleaseAgeExclude:
   - '@ktam/*'
+  # Renovate security update: vite@8.0.16
+  - vite@8.0.16
 
 trustPolicy: no-downgrade
 trustPolicyIgnoreAfter: 10080 # 1 week
