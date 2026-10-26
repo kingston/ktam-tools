@@ -21,14 +21,14 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@astrojs/check": "0.9.9",
-    "@tailwindcss/vite": "4.2.2",
-    "astro": "^6.4.6",
-    "tailwindcss": "^4.2.2"
+    "@astrojs/check": "0.9.12",
+    "@tailwindcss/vite": "4.3.3",
+    "astro": "^7.4.2",
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
     "@ktam/lint-react": "workspace:*",
-    "@types/node": "24.13.2",
+    "@types/node": "24.19.2",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:"

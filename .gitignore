@@ -133,3 +133,6 @@ dist
 
 # Claude
 /.claude/settings.local.json
+
+# Aurica Sandbox
+.aurica
